@@ -1,0 +1,141 @@
+<nav md-tab-nav-bar>
+	<div class="topNavBar">
+		<div class="headerArea">
+			<img src="../assets/burst-header.png" alt="headerImage" />
+			<img src="../assets/Logo@2x.png" alt="headerImage" />
+			<label class="pagename">{{ headerValue | translate:lang }}</label>
+			<label id="blankSpacer"></label><label id="blankSpacer"></label><label id="blankSpacer"></label>
+			<label md-span *ngIf="data" id="welcome">{{ 'homeComponent.welcome'  | translate:lang }}, {{data}}</label>
+			<label *ngIf="role" id="role">{{ 'homeComponent.role'  | translate:lang }} {{role}}</label>
+			<a md-tab-link routerLink="/login" id="Logout">{{ 'homeComponent.logout'  | translate:lang }}</a>
+		</div>
+	</div>
+</nav>
+<!--<md-sidenav-container class="md-container">
+	<md-sidenav #sidenav class="md-sidenav" mode="side" opened="true">
+		<button md-mini-fab class="example-fab" (click)="toggleSidenavLinks();">
+      <md-icon>menu</md-icon>
+    </button>
+		<nav md-tab-nav-bar id="navbar1">
+			<ul class="sidenavmenulist" id="sidenavmenulist">
+				<li>
+					<md-icon class="icon-navigation" routerLink="/home/index">home</md-icon>
+					<a class="sidenavLink" md-tab-link routerLink="/home/index" id="home">{{ 'homeComponent.home'  | translate:lang }}</a>
+				</li>
+				<li>
+					<md-icon class="icon-navigation" routerLink="/home/processmonitor">device_hub</md-icon>
+					<a class="sidenavLink" md-tab-link routerLink="/home/processmonitor" id="processMonitor">{{ 'homeComponent.processMonitor'  | translate:lang }}</a>
+				</li>
+				<li>
+					<md-icon class="icon-navigation" routerLink="/home/resourcestracker">important_devices</md-icon>
+					<a class="sidenavLink" md-tab-link routerLink="/home/resourcestracker" id="resourcesTracker">{{ 'homeComponent.resourcesTracker' | translate:lang }}</a>
+				</li>
+				<li>
+					<md-icon class="icon-navigation" routerLink="/home/content360">format_align_left</md-icon>
+					<a class="sidenavLink" md-tab-link routerLink="/home/content360" id="content360">{{ 'homeComponent.content360'  | translate:lang }}</a>
+				</li>
+				<li>
+					<md-icon class="icon-navigation" routerLink="/home/patternview">timeline</md-icon>
+					<a class="sidenavLink" md-tab-link routerLink="/home/patternview" id="PatternView">{{ 'homeComponent.patternView'  | translate:lang }}</a>
+				</li>
+			</ul>
+		</nav>
+		<nav md-tab-nav-bar id="navbar2" style="display:none;">
+			<ul class="sidenavmenulist" id="sidenavmenulist">
+				<li>
+					<md-icon class="icon-navigation" routerLink="/home/index">home</md-icon>
+					<a class="sidenavLink" md-tab-link routerLink="/home/index" id="home">{{ 'homeComponent.home'  | translate:lang }}</a>
+				</li>
+			</ul>
+		</nav>
+	</md-sidenav>
+	<router-outlet></router-outlet>
+	<footer>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-3 offset-md-1 footerlogo">
+					<img src="../assets/burst-footer.png" alt="headerImage" />
+					<img src="../assets/Logo-footer.png" alt="headerImage" />
+				</div>
+				<div class="col-md-1 offset-md-1 footerLinks">
+					|<a routerLink="/home/index" class="homeFooter" id="footerHome">{{ 'homeComponent.home'  | translate:lang }}</a>
+				</div>
+				<div class="col-md-1 offset-md-1 footerLinks">
+					|<a routerLink="" class="homeFooter" id="footerAbout">{{ 'homeComponent.about'  | translate:lang }}</a>
+				</div>
+				<div class="col-md-1 offset-md-1 footerLinks">
+					|<a routerLink="" class="homeFooter" id="footerContact">{{ 'homeComponent.contact'  | translate:lang }}</a>
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright">
+			<div class="container-fluid">
+				&copy; {{ date | date:'yyyy' }} {{ 'homeComponent.copyright' | translate:lang }}
+			</div>
+		</div>
+	</footer>
+</md-sidenav-container>-->
+<div id="mySidenav" class="sidenav">
+	<div id="divToggle" style="text-align: right; margin-top:2%;">
+		<span class="glyphicon" style="font-size:30px; color: #0C3681; cursor:pointer;text-align:right;" id="spanToggleIcon" (click)="toggleNav()">&#9776;</span>
+		<span class="glyphicon" style="font-size:26px; color: #0C3681; cursor:pointer;text-align:right; display:none;" id="spanToggleIconArrow"
+		 (click)="toggleNav()">&rarr;</span>
+	</div>
+
+	<ul class="sidenavmenulist" id="sidenavmenulist">
+		<li>
+			<a class="sidenavLink" routerLink="/home/index" id="home">
+				<md-icon class="icon-navigation">home</md-icon>
+				<span class="sidenavMenuLinkText" id="spanHome">{{ 'homeComponent.home' | translate:lang }}</span>
+			</a>
+		</li>
+		<li>
+			<a class="sidenavLink" routerLink="/home/processmonitor" id="processMonitor">
+				<md-icon class="icon-navigation">device_hub</md-icon>
+				<span class="sidenavMenuLinkText" id="spanProcess">{{ 'homeComponent.processMonitor' | translate:lang }}</span></a>
+		</li>
+		<li>
+			<a class="sidenavLink" routerLink="/home/resourcestracker" id="resourcesTracker">
+				<md-icon class="icon-navigation">important_devices</md-icon>
+				<span class="sidenavMenuLinkText" id="spanResource">{{ 'homeComponent.resourcesTracker' | translate:lang }}</span></a>
+		</li>
+		<li>
+			<a class="sidenavLink" routerLink="/home/content360" id="content360">
+				<md-icon class="icon-navigation">format_align_left</md-icon>
+				<span class="sidenavMenuLinkText" id="spanContent">{{ 'homeComponent.content360' | translate:lang }}</span></a>
+		</li>
+		<li>
+			<a class="sidenavLink" routerLink="/home/patternview" id="PatternView">
+				<md-icon class="icon-navigation">timeline</md-icon>
+				<span class="sidenavMenuLinkText" id="spanPattern">{{ 'homeComponent.patternView' | translate:lang }}</span></a>
+		</li>
+	</ul>
+</div>
+
+<div id="main">
+	<router-outlet></router-outlet>
+</div>
+<footer>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-3 offset-md-1 footerlogo">
+				<img src="../assets/burst-footer.png" alt="headerImage" />
+				<img src="../assets/Logo-footer.png" alt="headerImage" />
+			</div>
+			<div class="col-md-1 offset-md-1 footerLinks">
+				|<a routerLink="/home/index" class="homeFooter" id="footerHome">{{ 'homeComponent.home'  | translate:lang }}</a>
+			</div>
+			<div class="col-md-1 offset-md-1 footerLinks">
+				|<a routerLink="" class="homeFooter" id="footerAbout">{{ 'homeComponent.about'  | translate:lang }}</a>
+			</div>
+			<div class="col-md-1 offset-md-1 footerLinks">
+				|<a routerLink="" class="homeFooter" id="footerContact">{{ 'homeComponent.contact'  | translate:lang }}</a>
+			</div>
+		</div>
+	</div>
+	<div class="footer-copyright">
+		<div class="container-fluid">
+			&copy; {{ date | date:'yyyy' }} {{ 'homeComponent.copyright' | translate:lang }}
+		</div>
+	</div>
+</footer>
